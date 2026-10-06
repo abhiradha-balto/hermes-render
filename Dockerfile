@@ -68,5 +68,5 @@ RUN install -d -o hermes -g hermes -m 0755 /opt/data
 # Stay as root so the bootstrap can chown the mounted /opt/data on first
 # boot, then `gosu hermes` for the config patch, then exec the upstream
 # entrypoint (which also runs as root and does its own gosu drop).
-ENTRYPOINT ["/usr/bin/tini", "-g", "--", "/opt/render-tools/bootstrap.sh"]
+
 CMD ["gateway", "run"]
